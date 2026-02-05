@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router';
-import { Tractor, MapPin, AlertTriangle, FileText, Bell, TrendingUp } from 'lucide-react';
+import { Tractor, MapPin, AlertTriangle, FileText, Bell, TrendingUp, LogOut } from 'lucide-react';
 
 export function FarmerDashboard() {
   const navigate = useNavigate();
@@ -10,10 +10,15 @@ export function FarmerDashboard() {
       <div className="bg-green-600 text-white p-4">
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-xl">Farmer Dashboard</h1>
-          <button onClick={() => navigate('/notifications')} className="relative">
-            <Bell className="w-6 h-6" />
-            <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full text-xs flex items-center justify-center">3</span>
-          </button>
+          <div className="flex gap-3">
+            <button onClick={() => navigate('/notifications')} className="relative">
+              <Bell className="w-6 h-6" />
+              <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full text-xs flex items-center justify-center">3</span>
+            </button>
+            <button onClick={() => navigate('/')} className="hover:opacity-80" title="Logout">
+              <LogOut className="w-6 h-6" />
+            </button>
+          </div>
         </div>
         <p className="text-sm text-green-100">Welcome back, Rajesh Kumar</p>
       </div>
