@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router';
-import { Bell, Tractor, MapPin, Activity, FileText, Plus } from 'lucide-react';
+import { Bell, Tractor, MapPin, Activity, FileText, Plus, LogOut } from 'lucide-react';
 
 export function OwnerDashboard() {
   const navigate = useNavigate();
@@ -43,10 +43,15 @@ export function OwnerDashboard() {
       <div className="bg-purple-600 text-white p-4">
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-xl">Fleet Owner Dashboard</h1>
-          <button onClick={() => navigate('/notifications')} className="relative">
-            <Bell className="w-6 h-6" />
-            <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full text-xs flex items-center justify-center">5</span>
-          </button>
+          <div className="flex gap-3">
+            <button onClick={() => navigate('/notifications')} className="relative">
+              <Bell className="w-6 h-6" />
+              <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full text-xs flex items-center justify-center">5</span>
+            </button>
+            <button onClick={() => navigate('/')} className="hover:opacity-80" title="Logout">
+              <LogOut className="w-6 h-6" />
+            </button>
+          </div>
         </div>
         <p className="text-sm text-purple-100">Welcome, Anil Sharma</p>
       </div>
